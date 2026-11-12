@@ -1,0 +1,23 @@
+
+# Archivos de compilación
+bin/
+obj/
+
+# Configuraciones locales
+appsettings.Development.json
+
+# Visual Studio Code
+.vscode/
+
+# Visual Studio
+.vs/
+
+# Archivos de usuario
+*.user
+*.suo
+
+# Logs
+*.log
+
+# Secretos
+secrets.json
