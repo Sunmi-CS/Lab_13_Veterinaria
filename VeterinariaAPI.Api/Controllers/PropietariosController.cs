@@ -3,13 +3,13 @@ using Microsoft.AspNetCore.Mvc;
 using VeterinariaAPI.Entidades.DTOs;
 using VeterinariaAPI.Negocio.Exceptions;
 using VeterinariaAPI.Negocio.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 
 namespace VeterinariaAPI.Api.Controllers;
-
+[Authorize(Roles = "Recepcionista,Veterinario")]
 [ApiController]
 [Route("api/[controller]")]
-public class PropietariosController : ControllerBase
-{
+public class PropietariosController : ControllerBase{
     private readonly IPropietarioService _service;
 
     public PropietariosController(IPropietarioService service)

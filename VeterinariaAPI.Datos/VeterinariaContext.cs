@@ -13,6 +13,7 @@ public partial class VeterinariaContext : DbContext
     public virtual DbSet<Propietario> Propietarios { get; set; }
 
     public virtual DbSet<Mascota> Mascotas { get; set; }
+    public virtual DbSet<Usuario> Usuarios { get; set; } = null!;
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -67,5 +68,27 @@ public partial class VeterinariaContext : DbContext
                 .OnDelete(DeleteBehavior.Restrict)
                 .HasConstraintName("FK_Mascotas_Propietarios");
         });
+        modelBuilder.Entity<Usuario>(entity =>
+        {
+            entity.HasKey(e => e.IdUsuario);
+
+            entity.ToTable("Usuarios");
+
+            entity.Property(e => e.Correo)
+                .HasMaxLength(120)
+                .IsRequired();
+
+            entity.Property(e => e.ClaveHash)
+                .HasMaxLength(255)
+                .IsRequired();
+
+            entity.Property(e => e.Rol)
+                .HasMaxLength(50)
+                .IsRequired();
+
+            entity.HasIndex(e => e.Correo)
+                .IsUnique();
+        });
+
     }
 }

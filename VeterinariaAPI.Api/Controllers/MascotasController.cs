@@ -3,9 +3,10 @@ using Microsoft.AspNetCore.Mvc;
 using VeterinariaAPI.Entidades.DTOs;
 using VeterinariaAPI.Negocio.Exceptions;
 using VeterinariaAPI.Negocio.Interfaces;
-
+using Microsoft.AspNetCore.Authorization;
 namespace VeterinariaAPI.Api.Controllers;
 
+[Authorize(Roles = "Recepcionista,Veterinario")]
 [ApiController]
 [Route("api/[controller]")]
 public class MascotasController : ControllerBase
@@ -101,14 +102,19 @@ public class MascotasController : ControllerBase
 
     // DELETE: api/Mascotas/1
 
+    [Authorize(Roles = "Veterinario")]
     [HttpDelete("{id:int}")]
     public async Task<IActionResult> Eliminar(int id)
     {
         bool eliminado = await _service.EliminarAsync(id);
 
         if (!eliminado)
-            return NotFound(new { mensaje = "Mascota no encontrada." });
+            return NotFound(new
+            {
+                mensaje = "Mascota no encontrada."
+            });
 
         return NoContent();
     }
+
 }

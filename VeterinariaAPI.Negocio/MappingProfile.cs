@@ -36,5 +36,22 @@ public class MappingProfile : Profile
         CreateMap<MascotaCrearDto, Mascota>();
 
         CreateMap<MascotaActualizarDto, Mascota>();
+
+        // Mapeos de Usuario
+        CreateMap<Usuario, UsuarioPerfilDto>();
+
+        CreateMap<UsuarioRegistroDto, Usuario>()
+            .ForMember(
+                destino => destino.IdUsuario,
+                opcion => opcion.Ignore()
+            )
+            .ForMember(
+                destino => destino.ClaveHash,
+                opcion => opcion.Ignore()
+            )
+            .ForMember(
+                destino => destino.Rol,
+                opcion => opcion.Ignore()
+            );
     }
 }
