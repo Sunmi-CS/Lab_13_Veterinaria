@@ -57,5 +57,8 @@
         "AllowedScopes": []
       }
     }
-  ]
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "https://veterinaria-gateway-ck15.onrender.com"
+  }
 }
