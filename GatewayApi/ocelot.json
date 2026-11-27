@@ -1,14 +1,15 @@
+
 {
   "Routes": [
     {
       "UpstreamPathTemplate": "/gateway/auth/{everything}",
       "UpstreamHttpMethod": [ "POST" ],
       "DownstreamPathTemplate": "/api/auth/{everything}",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5199
+          "Host": "veterinariagateway-sunmi.runasp.net",
+          "Port": 443
         }
       ]
     },
@@ -16,11 +17,11 @@
       "UpstreamPathTemplate": "/gateway/catalogo/{everything}",
       "UpstreamHttpMethod": [ "GET" ],
       "DownstreamPathTemplate": "/api/{everything}",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5200
+          "Host": "lab-13-veterinaria.onrender.com",
+          "Port": 443
         }
       ],
       "AuthenticationOptions": {
@@ -32,11 +33,11 @@
       "UpstreamPathTemplate": "/gateway/veterinaria/{everything}",
       "UpstreamHttpMethod": [ "GET" ],
       "DownstreamPathTemplate": "/api/{everything}",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5199
+          "Host": "veterinariagateway-sunmi.runasp.net",
+          "Port": 443
         }
       ]
     },
@@ -44,11 +45,11 @@
       "UpstreamPathTemplate": "/gateway/veterinaria/{everything}",
       "UpstreamHttpMethod": [ "POST", "PUT", "DELETE" ],
       "DownstreamPathTemplate": "/api/{everything}",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5199
+          "Host": "veterinariagateway-sunmi.runasp.net",
+          "Port": 443
         }
       ],
       "AuthenticationOptions": {
@@ -56,8 +57,5 @@
         "AllowedScopes": []
       }
     }
-  ],
-  "GlobalConfiguration": {
-    "BaseUrl": "http://localhost:5100"
-  }
+  ]
 }
