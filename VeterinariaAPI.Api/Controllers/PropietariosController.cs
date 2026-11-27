@@ -19,6 +19,7 @@ public class PropietariosController : ControllerBase{
 
     // GET: api/Propietarios
 
+    [AllowAnonymous]
     [HttpGet]
     public async Task<ActionResult<List<PropietarioDto>>> ObtenerTodos()
     {
@@ -29,6 +30,7 @@ public class PropietariosController : ControllerBase{
 
     // GET: api/Propietarios/1
 
+    [AllowAnonymous]
     [HttpGet("{id:int}")]
     public async Task<ActionResult<PropietarioDto>> ObtenerPorId(int id)
     {

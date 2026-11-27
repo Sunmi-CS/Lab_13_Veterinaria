@@ -1,0 +1,6 @@
+@CatalogoVeterinarioAPI_HostAddress = http://localhost:5031
+
+GET {{CatalogoVeterinarioAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

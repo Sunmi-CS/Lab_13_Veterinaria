@@ -144,11 +144,8 @@ builder.Services
 var app = builder.Build();
 
 // 10. SWAGGER
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+app.UseSwagger();
+app.UseSwaggerUI();
 
 // 11. MIDDLEWARE
 app.UseHttpsRedirection();

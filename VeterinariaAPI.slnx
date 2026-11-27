@@ -1,4 +1,6 @@
 <Solution>
+  <Project Path="CatalogoVeterinarioAPI/CatalogoVeterinarioAPI.csproj" />
+  <Project Path="GatewayApi/GatewayApi.csproj" />
   <Project Path="VeterinariaAPI.Api/VeterinariaAPI.Api.csproj" />
   <Project Path="VeterinariaAPI.Datos/VeterinariaAPI.Datos.csproj" />
   <Project Path="VeterinariaAPI.Entidades/VeterinariaAPI.Entidades.csproj" />

@@ -4,6 +4,7 @@ using VeterinariaAPI.Entidades.DTOs;
 using VeterinariaAPI.Negocio.Exceptions;
 using VeterinariaAPI.Negocio.Interfaces;
 using Microsoft.AspNetCore.Authorization;
+
 namespace VeterinariaAPI.Api.Controllers;
 
 [Authorize(Roles = "Recepcionista,Veterinario")]
@@ -20,6 +21,7 @@ public class MascotasController : ControllerBase
 
     // GET: api/Mascotas
 
+    [AllowAnonymous]
     [HttpGet]
     public async Task<ActionResult<List<MascotaDto>>> ObtenerTodos(
         [FromQuery] string? especie)
@@ -31,6 +33,7 @@ public class MascotasController : ControllerBase
 
     // GET: api/Mascotas/1
 
+    [AllowAnonymous]
     [HttpGet("{id:int}")]
     public async Task<ActionResult<MascotaDto>> ObtenerPorId(int id)
     {
@@ -44,6 +47,7 @@ public class MascotasController : ControllerBase
 
     // GET: api/Propietarios/1/mascotas
 
+    [AllowAnonymous]
     [HttpGet("~/api/Propietarios/{idPropietario:int}/mascotas")]
     public async Task<ActionResult<List<MascotaDto>>> ObtenerPorPropietario(
         int idPropietario)
@@ -116,5 +120,4 @@ public class MascotasController : ControllerBase
 
         return NoContent();
     }
-
 }

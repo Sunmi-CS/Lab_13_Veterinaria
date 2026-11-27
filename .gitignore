@@ -5,6 +5,8 @@ obj/
 
 # Configuraciones locales
 appsettings.Development.json
+appsettings.Development.json
+secrets.json
 
 # Visual Studio Code
 .vscode/
